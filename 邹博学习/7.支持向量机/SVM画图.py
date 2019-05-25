@@ -43,7 +43,6 @@ if __name__ == "__main__":
         grid_hat = grid_hat.reshape(x1.shape)
         plt.pcolormesh(x1, x2, grid_hat, cmap=cm_light, alpha=0.8)
         plt.scatter(x[:, 0], x[:, 1], c=y, edgecolors='k', s=40, cmap=cm_dark)  # 样本的显示
-        plt.scatter(x[clf.support_, 0], x[clf.support_, 1], edgecolors='k', facecolors='none', s=100, marker='o')   # 支撑向量
         z = clf.decision_function(grid_test)
         z = z.reshape(x1.shape)
         plt.contour(x1, x2, z, colors=list('krk'), linestyles=['--', '-', '--'], linewidths=[1, 2, 1],
